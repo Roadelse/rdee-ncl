@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export NCFILE_SRC=$1
+export NCFILE_DST=$2
+
+ncl -Qn /mnt/d/usr/bin/mergeNetcdf.ncl

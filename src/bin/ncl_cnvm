@@ -1,0 +1,15 @@
+#!/bin/bash
+
+script_realpath=$(realpath "${BASH_SOURCE[0]}")
+script_dir=$(dirname $script_realpath)
+
+if [[ $#argv == 1 ]]; then
+    echo wulala
+    export VAR=all
+else
+    export VAR=$2
+fi
+
+export FILE=$1
+echo "calculating mean value of vars in file: $1"
+ncl -Q $script_dir/calNcVarMean.ncl
